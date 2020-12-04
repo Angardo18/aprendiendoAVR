@@ -1,0 +1,31 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATtiny85"</DEVICE>
+ <WORKING_DIR>D:\programacion\AVR\aprendiendoAVR\boton\boton\Release</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>D:/programas\AVRstudio\7.0\Packs\atmel\ATtiny_DFP\1.8.332\avrasm\inc</DIR>
+  <DIR>D:\programas\AVRstudio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>D:\programacion\AVR\aprendiendoAVR\boton\boton\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>D:/programas\AVRstudio\7.0\Packs\atmel\ATtiny_DFP\1.8.332\avrasm\inc\tn85def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>D:\programacion\AVR\aprendiendoAVR\boton\boton\Release\boton.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>boton.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>boton.map</FILE>
+  <FILE>boton.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <CONFIGURACION><FILE>D:\programacion\AVR\aprendiendoAVR\boton\boton\main.asm</FILE><LINE>11</LINE></CONFIGURACION>
+  <LOOP><FILE>D:\programacion\AVR\aprendiendoAVR\boton\boton\main.asm</FILE><LINE>20</LINE></LOOP>
+  <DELAY><FILE>D:\programacion\AVR\aprendiendoAVR\boton\boton\main.asm</FILE><LINE>47</LINE></DELAY>
+  <COMPARACION><FILE>D:\programacion\AVR\aprendiendoAVR\boton\boton\main.asm</FILE><LINE>49</LINE></COMPARACION>
+  <SALIR><FILE>D:\programacion\AVR\aprendiendoAVR\boton\boton\main.asm</FILE><LINE>54</LINE></SALIR>
+ </LABELS>
+</ASSEMBLER_INFO>

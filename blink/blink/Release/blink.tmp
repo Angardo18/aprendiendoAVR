@@ -1,0 +1,37 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATtiny85"</DEVICE>
+ <WORKING_DIR>D:\programacion\AVR\aprendiendoAVR\blink\blink\Release</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>D:/programas\AVRstudio\7.0\Packs\atmel\ATtiny_DFP\1.8.332\avrasm\inc</DIR>
+  <DIR>D:\programas\AVRstudio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>D:\programacion\AVR\aprendiendoAVR\blink\blink\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>D:/programas\AVRstudio\7.0\Packs\atmel\ATtiny_DFP\1.8.332\avrasm\inc\tn85def.inc</FILE>
+  <FILE>D:/programas\AVRstudio\7.0\Packs\atmel\ATtiny_DFP\1.8.332\avrasm\inc\TN85DEF.INC</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>D:\programacion\AVR\aprendiendoAVR\blink\blink\Release\blink.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>blink.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>blink.map</FILE>
+  <FILE>blink.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <INICIO><FILE>D:\programacion\AVR\aprendiendoAVR\blink\blink\main.asm</FILE><LINE>20</LINE></INICIO>
+  <DELAYLONG><FILE>D:\programacion\AVR\aprendiendoAVR\blink\blink\main.asm</FILE><LINE>30</LINE></DELAYLONG>
+  <COMPARACION3><FILE>D:\programacion\AVR\aprendiendoAVR\blink\blink\main.asm</FILE><LINE>32</LINE></COMPARACION3>
+  <SALIR><FILE>D:\programacion\AVR\aprendiendoAVR\blink\blink\main.asm</FILE><LINE>38</LINE></SALIR>
+  <DELAYMED><FILE>D:\programacion\AVR\aprendiendoAVR\blink\blink\main.asm</FILE><LINE>41</LINE></DELAYMED>
+  <COMPARACION2><FILE>D:\programacion\AVR\aprendiendoAVR\blink\blink\main.asm</FILE><LINE>43</LINE></COMPARACION2>
+  <SAL><FILE>D:\programacion\AVR\aprendiendoAVR\blink\blink\main.asm</FILE><LINE>49</LINE></SAL>
+  <DELAY><FILE>D:\programacion\AVR\aprendiendoAVR\blink\blink\main.asm</FILE><LINE>52</LINE></DELAY>
+  <COMPARACION><FILE>D:\programacion\AVR\aprendiendoAVR\blink\blink\main.asm</FILE><LINE>54</LINE></COMPARACION>
+  <DEVUELTA><FILE>D:\programacion\AVR\aprendiendoAVR\blink\blink\main.asm</FILE><LINE>59</LINE></DEVUELTA>
+ </LABELS>
+</ASSEMBLER_INFO>
