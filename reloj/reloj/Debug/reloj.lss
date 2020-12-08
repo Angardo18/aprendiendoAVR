@@ -1,0 +1,76 @@
+
+AVRASM ver. 2.2.8  D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm Mon Dec 07 18:38:56 2020
+
+[builtin](2): Including file 'D:/programas\AVRstudio\7.0\Packs\atmel\ATtiny_DFP\1.8.332\avrasm\inc\tn85def.inc'
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(7): Including file 'D:/programas\AVRstudio\7.0\Packs\atmel\ATtiny_DFP\1.8.332\avrasm\inc\TN85DEF.INC'
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(8): Including file 'D:\programacion\AVR\aprendiendoAVR\reloj\reloj\TM1637.INC'
+[builtin](2): Including file 'D:/programas\AVRstudio\7.0\Packs\atmel\ATtiny_DFP\1.8.332\avrasm\inc\tn85def.inc'
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(7): Including file 'D:/programas\AVRstudio\7.0\Packs\atmel\ATtiny_DFP\1.8.332\avrasm\inc\TN85DEF.INC'
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(8): Including file 'D:\programacion\AVR\aprendiendoAVR\reloj\reloj\TM1637.INC'
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(28): error: Overlap in .cseg: addr=0x0 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(30): error: Overlap in .cseg: addr=0x5 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(31): error: Overlap in .cseg: addr=0x6 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(31): error: Overlap in .cseg: addr=0x7 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(31): error: Overlap in .cseg: addr=0x8 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(31): error: Overlap in .cseg: addr=0x9 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(31): error: Overlap in .cseg: addr=0xa conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(31): error: Overlap in .cseg: addr=0xb conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(36): error: Overlap in .cseg: addr=0xc conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(37): error: Overlap in .cseg: addr=0xd conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(39): error: Overlap in .cseg: addr=0xe conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(40): error: Overlap in .cseg: addr=0xf conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(42): error: Overlap in .cseg: addr=0x10 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(43): error: Overlap in .cseg: addr=0x11 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(46): error: Overlap in .cseg: addr=0x12 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(47): error: Overlap in .cseg: addr=0x13 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(48): error: Overlap in .cseg: addr=0x14 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(49): error: Overlap in .cseg: addr=0x15 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(51): error: Overlap in .cseg: addr=0x16 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(52): error: Overlap in .cseg: addr=0x18 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(53): error: Overlap in .cseg: addr=0x1a conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(54): error: Overlap in .cseg: addr=0x1c conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(55): error: Overlap in .cseg: addr=0x1e conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(57): error: Overlap in .cseg: addr=0x1f conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(59): error: Overlap in .cseg: addr=0x21 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(60): error: Overlap in .cseg: addr=0x23 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(65): error: Overlap in .cseg: addr=0x25 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(66): error: Overlap in .cseg: addr=0x26 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(67): error: Overlap in .cseg: addr=0x27 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(68): error: Overlap in .cseg: addr=0x28 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(70): error: Overlap in .cseg: addr=0x29 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(71): error: Overlap in .cseg: addr=0x2b conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(72): error: Overlap in .cseg: addr=0x2d conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(73): error: Overlap in .cseg: addr=0x2e conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(74): error: Overlap in .cseg: addr=0x2f conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(75): error: Overlap in .cseg: addr=0x30 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(77): error: Overlap in .cseg: addr=0x32 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(78): error: Overlap in .cseg: addr=0x33 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(80): error: Overlap in .cseg: addr=0x34 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(81): error: Overlap in .cseg: addr=0x36 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(82): error: Overlap in .cseg: addr=0x38 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(83): error: Overlap in .cseg: addr=0x39 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(84): error: Overlap in .cseg: addr=0x3a conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(85): error: Overlap in .cseg: addr=0x3b conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(87): error: Overlap in .cseg: addr=0x3d conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(88): error: Overlap in .cseg: addr=0x3e conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(90): error: Overlap in .cseg: addr=0x3f conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(91): error: Overlap in .cseg: addr=0x41 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(92): error: Overlap in .cseg: addr=0x43 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(93): error: Overlap in .cseg: addr=0x44 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(94): error: Overlap in .cseg: addr=0x45 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(95): error: Overlap in .cseg: addr=0x46 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(97): error: Overlap in .cseg: addr=0x48 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(98): error: Overlap in .cseg: addr=0x49 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(100): error: Overlap in .cseg: addr=0x4a conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(101): error: Overlap in .cseg: addr=0x4c conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(102): error: Overlap in .cseg: addr=0x4d conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(106): error: Overlap in .cseg: addr=0x4e conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(107): error: Overlap in .cseg: addr=0x50 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(109): error: Overlap in .cseg: addr=0x52 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(110): error: Overlap in .cseg: addr=0x53 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(111): error: Overlap in .cseg: addr=0x55 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(113): error: Overlap in .cseg: addr=0x56 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(114): error: Overlap in .cseg: addr=0x57 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(116): error: Overlap in .cseg: addr=0x59 conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(117): error: Overlap in .cseg: addr=0x5a conflicts with 0x0:0x61
+D:\programacion\AVR\aprendiendoAVR\reloj\reloj\main.asm(118): error: Overlap in .cseg: addr=0x5b conflicts with 0x0:0x61

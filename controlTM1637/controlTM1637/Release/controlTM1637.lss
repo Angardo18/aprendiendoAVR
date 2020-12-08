@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm Sun Dec 06 23:22:18 2020
+AVRASM ver. 2.2.8  D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm Mon Dec 07 19:49:19 2020
 
 [builtin](2): Including file 'D:/programas\AVRstudio\7.0\Packs\atmel\ATtiny_DFP\1.8.332\avrasm\inc\tn85def.inc'
 [builtin](2): Including file 'D:/programas\AVRstudio\7.0\Packs\atmel\ATtiny_DFP\1.8.332\avrasm\inc\tn85def.inc'
@@ -695,7 +695,7 @@ AVRASM ver. 2.2.8  D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM163
                                  ; Author : Angel Orellana
                                  ; ESTE PROGRAMA ES UN EJERCICIO PARA IMPLEMENTAR UNA COMUNICACION VIA SOFTWARE CON 
                                  ; UN MODULO DE DISPLAY 7 SEGMENTOS 4 DIGITOS QUE USA EL INTEGRADO TM1637 COMO CONTROLADOR
-                                 
+                                 ;.INCLUDE "TM1637.ASM"
                                  ;PINES QUE SERAN USADOS COMO RELOJ Y COMO DATOS
                                  .EQU CLK = 0
                                  .EQU DATA = 1
@@ -704,10 +704,10 @@ AVRASM ver. 2.2.8  D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM163
                                  .EQU VAL_TMR0 = 98;0x0B
                                  .DSEG ;DATOS
                                  ;------------ USADOS EN LAS FUNCIONES DE ENVIO DE DATOS -----------------
-000060                           SEG1: .BYTE 1 ;VARIABLE USADA PARA ASIGNAR EL DATO A ENVIAR
-000061                           SEG2: .BYTE 1
-000062                           SEG3: .BYTE	1
-000063                           SEG4: .BYTE 1 ;VARIABLES QUE SE USAN PARA ENVIAR LOS DATOS
+000060                           SEG1: .BYTE 1 ;DIGITO 1 
+000061                           SEG2: .BYTE 1 ;DIGITO 2
+000062                           SEG3: .BYTE	1 ;DIGITO 3
+000063                           SEG4: .BYTE 1 ;DIGITO 4
                                  ;------------- USADOS PARA DETERMINAR LOS VALORES DE LOS DIGITOS --------
 000064                           CONT_L: .BYTE 1
 000065                           CONT_LM: .BYTE 1
@@ -720,7 +720,7 @@ AVRASM ver. 2.2.8  D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM163
                                  .ORG 0x0000
 000000 c00a                      	RJMP CONFIGURACION
                                  .ORG 0x0005
-000005 c0a5                      	RJMP ISR_TMR0
+000005 c0a6                      	RJMP ISR_TMR0
 000006 063f
 000007 4f5b
 000008 6d66
@@ -781,10 +781,10 @@ AVRASM ver. 2.2.8  D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM163
 00003b 95c8                      	LPM ;SE CARGA A R0 EL VALOR  PARA EL DISPLAY
 00003c 9200 0063                 	STS SEG4, R0
 00003e 94f8                      	CLI
-00003f d01d                      	RCALL CONF_IO_DISPLAY
+00003f d01e                      	RCALL CONF_IO_DISPLAY
 000040 d003                      	RCALL DISPLAY
 000041 9478                      	SEI
-000042 d03e                      	RCALL CORREGIR_BCD
+000042 d03f                      	RCALL CORREGIR_BCD
                                  
 000043 cfda                      	RJMP LOOP
                                  
@@ -792,143 +792,144 @@ AVRASM ver. 2.2.8  D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM163
                                  DISPLAY:
                                  	;EN ESTA RUTINA SE ENVIA EL COMANDO, Y LOS DATOS NECESARIOS A MOSTRAR
 000044 e400                      	LDI R16, ADR_AUTO ;SE CARGA EL COMANDO PARA LA ESCRITURA
-000045 d01a                      	RCALL START
-000046 d023                      	RCALL SEND
-000047 d01d                      	RCALL STOP
+000045 d01b                      	RCALL START
+000046 d024                      	RCALL SEND
+000047 d01e                      	RCALL STOP
                                  
 000048 ec00                      	LDI	 R16, DIR_INI ;DIRECCION INICIAL DE DATOS EN EL TN1637
-000049 d016                      	RCALL START
-00004a d01f                      	RCALL SEND
+000049 d017                      	RCALL START
+00004a d020                      	RCALL SEND
 00004b 9100 0063                 	LDS	R16, SEG4
-00004d d01c                      	RCALL SEND
+00004d d01d                      	RCALL SEND
 00004e 9100 0062                 	LDS	R16, SEG3
-000050 d019                      	RCALL SEND
-000051 9100 0061                 	LDS	R16, SEG2
-000053 d016                      	RCALL SEND
-000054 9100 0060                 	LDS	R16, SEG1
-000056 d013                      	RCALL SEND
-000057 d00d                      	RCALL	STOP ;FIN DE LOS DATOS
+000050 6800                      	SBR	R16, 1<<7 ;SE ENCIENDE EL BIT 7
+000051 d019                      	RCALL SEND
+000052 9100 0061                 	LDS	R16, SEG2
+000054 d016                      	RCALL SEND
+000055 9100 0060                 	LDS	R16, SEG1
+000057 d013                      	RCALL SEND
+000058 d00d                      	RCALL	STOP ;FIN DE LOS DATOS
                                  
                                  	;SE CONFIGURA EL BRILLO
-000058 e80a                      	LDI	R16, 0x8A ;
-000059 d006                      	RCALL START
-00005a d00f                      	RCALL SEND
-00005b d009                      	RCALL STOP
-00005c 9508                      	RET ;SE DETIENE
+000059 e80a                      	LDI	R16, 0x8A ;
+00005a d006                      	RCALL START
+00005b d00f                      	RCALL SEND
+00005c d009                      	RCALL STOP
+00005d 9508                      	RET ;SE DETIENE
                                  
                                  CONF_IO_DISPLAY:
                                  	;SE CONFIGURAN LAS LINEAS DE DATOS:
-00005d 9ab8                      	SBI	DDRB, CLK
-00005e 9ab9                      	SBI DDRB, DATA ;SE COLOCAN EN 1 LOS PINES DE DATOS Y CLOCK
-00005f 9508                      	RET
+00005e 9ab8                      	SBI	DDRB, CLK
+00005f 9ab9                      	SBI DDRB, DATA ;SE COLOCAN EN 1 LOS PINES DE DATOS Y CLOCK
+000060 9508                      	RET
                                  
                                  START:
-000060 9ac0                      	SBI	PORTB, CLK
-000061 9ac1                      	SBI	PORTB, DATA
-000062 98c1                      	CBI	PORTB, DATA
-000063 98c0                      	CBI	PORTB, CLK
-000064 9508                      	RET
+000061 9ac0                      	SBI	PORTB, CLK
+000062 9ac1                      	SBI	PORTB, DATA
+000063 98c1                      	CBI	PORTB, DATA
+000064 98c0                      	CBI	PORTB, CLK
+000065 9508                      	RET
                                  
                                  STOP:
-000065 98c0                      	CBI	PORTB, CLK
-000066 98c1                      	CBI	PORTB, DATA
-000067 9ac0                      	SBI	PORTB, CLK
-000068 9ac1                      	SBI	PORTB, DATA
-000069 9508                      	RET	
+000066 98c0                      	CBI	PORTB, CLK
+000067 98c1                      	CBI	PORTB, DATA
+000068 9ac0                      	SBI	PORTB, CLK
+000069 9ac1                      	SBI	PORTB, DATA
+00006a 9508                      	RET	
                                  
                                  SEND:
                                  	;SE USARA EL REGISTRO R16 PARA ENVIAR LOS DATOS Y R17 COMO VALOR DE CONTADOR
-00006a 2711                      	CLR	R17 ;SE COLOCA EN 0 EL VALOR DE R17
+00006b 2711                      	CLR	R17 ;SE COLOCA EN 0 EL VALOR DE R17
                                  	CICLE:
-00006b 3018                      	CPI R17, 8
-00006c f061                      	BREQ WAIT_FOR_ACK ;SI R17 ES 8 SE VA A LA ETIQUETA INDICADA
+00006c 3018                      	CPI R17, 8
+00006d f061                      	BREQ WAIT_FOR_ACK ;SI R17 ES 8 SE VA A LA ETIQUETA INDICADA
                                  	;------------- SIGUE AQUI SI NO HAN PASADO 8 BITS ------------
-00006d 98c0                      	CBI	PORTB, CLK ;SE COLOCA EN 0
-00006e fd00                      	SBRC R16, 0 ; SE SALTA LA INSTRUCCION SI EL BIT ES 0
-00006f c002                      	RJMP ONE
+00006e 98c0                      	CBI	PORTB, CLK ;SE COLOCA EN 0
+00006f fd00                      	SBRC R16, 0 ; SE SALTA LA INSTRUCCION SI EL BIT ES 0
+000070 c002                      	RJMP ONE
                                  	;-------- SI ES CERO SE EJECUTA AQUI -------------------------
-000070 98c1                      	CBI	PORTB, DATA
-000071 c001                      	RJMP CONTINUE
+000071 98c1                      	CBI	PORTB, DATA
+000072 c001                      	RJMP CONTINUE
                                  	
                                  	ONE: 
-000072 9ac1                      	SBI	PORTB, DATA
+000073 9ac1                      	SBI	PORTB, DATA
                                  
                                  	CONTINUE:
                                  	;-------- AQUI SE HACEN LOS PREPARATIVOS PARA EL SIGUIENTE BIT------
-000073 9ac0                      	SBI	PORTB, CLK ;SE COLOCA EN 1 EL RELOJ 
-000074 9506                      	LSR	R16 ;SHIFT LOGICO A LA DERECHA
-000075 9513                      	INC R17 ;SE INCREMENTA 
-000076 0000                      	NOP
+000074 9ac0                      	SBI	PORTB, CLK ;SE COLOCA EN 1 EL RELOJ 
+000075 9506                      	LSR	R16 ;SHIFT LOGICO A LA DERECHA
+000076 9513                      	INC R17 ;SE INCREMENTA 
 000077 0000                      	NOP
-000078 cff2                      	RJMP CICLE ;CONTINUA CON EL SIGUIENTE BIT
+000078 0000                      	NOP
+000079 cff2                      	RJMP CICLE ;CONTINUA CON EL SIGUIENTE BIT
                                  	WAIT_FOR_ACK:
-000079 98c0                      	CBI	PORTB, CLK
-00007a 98b9                      	CBI DDRB, DATA ;SE COLOCA COMO ENTRADA
-00007b 9ac0                      	SBI	PORTB, CLK
-00007c 0000                      	NOP
+00007a 98c0                      	CBI	PORTB, CLK
+00007b 98b9                      	CBI DDRB, DATA ;SE COLOCA COMO ENTRADA
+00007c 9ac0                      	SBI	PORTB, CLK
 00007d 0000                      	NOP
-00007e 9ab9                      	SBI	DDRB, DATA ;SE COLOCA COMO ENTRADA DE NUEVO
-00007f 98c1                      	CBI	PORTB, DATA ;SE COLOCA EN CERO
-000080 9508                      	RET ;FIN DEL ENVIO DE DATOS
+00007e 0000                      	NOP
+00007f 9ab9                      	SBI	DDRB, DATA ;SE COLOCA COMO ENTRADA DE NUEVO
+000080 98c1                      	CBI	PORTB, DATA ;SE COLOCA EN CERO
+000081 9508                      	RET ;FIN DEL ENVIO DE DATOS
                                  
                                  ;-------- CORRECCION EN BCD -------------------------------------------
                                  CORREGIR_BCD:
-000081 9100 0064                 	LDS	R16, CONT_L
-000083 300a                      	CPI R16, 10; SE COMPARA CON 10
-000084 f009                      	BREQ INCREMENTAR_LM ;SI ES 
-000085 9508                      	RET
+000082 9100 0064                 	LDS	R16, CONT_L
+000084 300a                      	CPI R16, 10; SE COMPARA CON 10
+000085 f009                      	BREQ INCREMENTAR_LM ;SI ES 
+000086 9508                      	RET
                                  	INCREMENTAR_LM:
-000086 2700                      	CLR	R16
-000087 9300 0064                 	STS CONT_L, R16
-000089 9100 0065                 	LDS	R16, CONT_LM
-00008b 9503                      	INC R16
-00008c 300a                      	CPI R16, 10
-00008d f019                      	BREQ INCREMENTAR_HM
+000087 2700                      	CLR	R16
+000088 9300 0064                 	STS CONT_L, R16
+00008a 9100 0065                 	LDS	R16, CONT_LM
+00008c 9503                      	INC R16
+00008d 300a                      	CPI R16, 10
+00008e f019                      	BREQ INCREMENTAR_HM
                                  	;- ELSE
-00008e 9300 0065                 	STS  CONT_LM,R16
-000090 9508                      	RET
+00008f 9300 0065                 	STS  CONT_LM,R16
+000091 9508                      	RET
                                  	INCREMENTAR_HM:
-000091 2700                      	CLR R16
-000092 9300 0065                 	STS CONT_LM, R16 ;SE COLOCA EN 0
-000094 9100 0066                 	LDS	R16, CONT_HM
-000096 9503                      	INC	R16
-000097 300a                      	CPI R16, 10
-000098 f019                      	BREQ INCREMENTAR_H
+000092 2700                      	CLR R16
+000093 9300 0065                 	STS CONT_LM, R16 ;SE COLOCA EN 0
+000095 9100 0066                 	LDS	R16, CONT_HM
+000097 9503                      	INC	R16
+000098 300a                      	CPI R16, 10
+000099 f019                      	BREQ INCREMENTAR_H
                                  	;-- SI NO -----
-000099 9300 0066                 	STS CONT_HM, R16
-00009b 9508                      	RET
+00009a 9300 0066                 	STS CONT_HM, R16
+00009c 9508                      	RET
                                  	INCREMENTAR_H:
-00009c 2700                      	CLR R16
-00009d 9300 0066                 	STS CONT_HM, R16
-00009f 9100 0067                 	LDS	R16, CONT_H
-0000a1 9503                      	INC R16
-0000a2 300a                      	CPI R16, 10
-0000a3 f019                      	BREQ FIN
+00009d 2700                      	CLR R16
+00009e 9300 0066                 	STS CONT_HM, R16
+0000a0 9100 0067                 	LDS	R16, CONT_H
+0000a2 9503                      	INC R16
+0000a3 300a                      	CPI R16, 10
+0000a4 f019                      	BREQ FIN
                                  	;-- SI NO ES IGUAL---
-0000a4 9300 0067                 	STS	CONT_H, R16
-0000a6 9508                      	RET
+0000a5 9300 0067                 	STS	CONT_H, R16
+0000a7 9508                      	RET
                                  	FIN:
-0000a7 2700                      	CLR R16
-0000a8 9300 0067                 	STS CONT_H,R16
-0000aa 9508                      	RET ;FIN DE TODO
+0000a8 2700                      	CLR R16
+0000a9 9300 0067                 	STS CONT_H,R16
+0000ab 9508                      	RET ;FIN DE TODO
                                  
                                  
                                  
                                  		
                                  ISR_TMR0:
-0000ab b72f                      	IN	R18, SREG
-0000ac 9320 0068                 	STS	STATUS_RAM, R18
+0000ac b72f                      	IN	R18, SREG
+0000ad 9320 0068                 	STS	STATUS_RAM, R18
                                  
-0000ae 9120 0064                 	LDS	R18, CONT_L
-0000b0 9523                      	INC	R18
-0000b1 9320 0064                 	STS	CONT_L, R18
+0000af 9120 0064                 	LDS	R18, CONT_L
+0000b1 9523                      	INC	R18
+0000b2 9320 0064                 	STS	CONT_L, R18
                                  
-0000b3 e622                      	LDI	R18, VAL_TMR0
-0000b4 bf22                      	OUT TCNT0, R18
+0000b4 e622                      	LDI	R18, VAL_TMR0
+0000b5 bf22                      	OUT TCNT0, R18
                                  
-0000b5 9120 0068                 	LDS R18, STATUS_RAM
-0000b7 bf2f                      	OUT SREG, R18
-0000b8 9518                      	RETI
+0000b6 9120 0068                 	LDS R18, STATUS_RAM
+0000b8 bf2f                      	OUT SREG, R18
+0000b9 9518                      	RETI
 
 
 RESOURCE USE INFORMATION
@@ -948,7 +949,7 @@ counted separately from r26..r31 here.
 "ATtiny85" register use summary:
 x  :   0 y  :   0 z  :   0 r0 :   4 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
 r5 :   0 r6 :   0 r7 :   0 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
-r13:   0 r14:   0 r15:   0 r16:  53 r17:   3 r18:   9 r19:   0 r20:   0 
+r13:   0 r14:   0 r15:   0 r16:  54 r17:   3 r18:   9 r19:   0 r20:   0 
 r21:   0 r22:   0 r23:   0 r24:   0 r25:   0 r26:   0 r27:   0 r28:   0 
 r29:   0 r30:   8 r31:   4 
 Registers used: 6 out of 35 (17.1%)
@@ -967,7 +968,7 @@ inc   :   5 ld    :   0 ldd   :   0 ldi   :  13 lds   :  14 lpm   :  12
 lsl   :   0 lsr   :   1 mov   :   0 movw  :   0 neg   :   0 nop   :   4 
 or    :   0 ori   :   0 out   :   6 pop   :   0 push  :   0 rcall :  16 
 ret   :  10 reti  :   1 rjmp  :   6 rol   :   0 ror   :   0 sbc   :   0 
-sbci  :   0 sbi   :  10 sbic  :   0 sbis  :   0 sbiw  :   0 sbr   :   2 
+sbci  :   0 sbi   :  10 sbic  :   0 sbis  :   0 sbiw  :   0 sbr   :   3 
 sbrc  :   1 sbrs  :   0 sec   :   0 seh   :   0 sei   :   2 sen   :   0 
 ser   :   0 ses   :   0 set   :   0 sev   :   0 sez   :   0 sleep :   0 
 spm   :   0 st    :   0 std   :   0 sts   :  17 sub   :   0 subi  :   0 
@@ -977,7 +978,7 @@ Instructions used: 23 out of 105 (21.9%)
 "ATtiny85" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x000172    352     10    362    8192   4.4%
+[.cseg] 0x000000 0x000174    354     10    364    8192   4.4%
 [.dseg] 0x000060 0x000069      0      9      9     512   1.8%
 [.eseg] 0x000000 0x000000      0      0      0     512   0.0%
 

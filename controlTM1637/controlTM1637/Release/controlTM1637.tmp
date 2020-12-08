@@ -32,22 +32,22 @@
   <CONT_H><FILE>D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm</FILE><LINE>25</LINE></CONT_H>
   <STATUS_RAM><FILE>D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm</FILE><LINE>27</LINE></STATUS_RAM>
   <CONFIGURACION><FILE>D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm</FILE><LINE>35</LINE></CONFIGURACION>
-  <ISR_TMR0><FILE>D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm</FILE><LINE>224</LINE></ISR_TMR0>
+  <ISR_TMR0><FILE>D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm</FILE><LINE>225</LINE></ISR_TMR0>
   <TABLE><FILE>D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm</FILE><LINE>34</LINE></TABLE>
   <LOOP><FILE>D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm</FILE><LINE>60</LINE></LOOP>
-  <CONF_IO_DISPLAY><FILE>D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm</FILE><LINE>125</LINE></CONF_IO_DISPLAY>
+  <CONF_IO_DISPLAY><FILE>D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm</FILE><LINE>126</LINE></CONF_IO_DISPLAY>
   <DISPLAY><FILE>D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm</FILE><LINE>98</LINE></DISPLAY>
-  <CORREGIR_BCD><FILE>D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm</FILE><LINE>181</LINE></CORREGIR_BCD>
-  <START><FILE>D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm</FILE><LINE>131</LINE></START>
-  <SEND><FILE>D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm</FILE><LINE>145</LINE></SEND>
-  <STOP><FILE>D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm</FILE><LINE>138</LINE></STOP>
-  <CICLE><FILE>D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm</FILE><LINE>148</LINE></CICLE>
-  <WAIT_FOR_ACK><FILE>D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm</FILE><LINE>170</LINE></WAIT_FOR_ACK>
-  <ONE><FILE>D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm</FILE><LINE>159</LINE></ONE>
-  <CONTINUE><FILE>D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm</FILE><LINE>162</LINE></CONTINUE>
-  <INCREMENTAR_LM><FILE>D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm</FILE><LINE>186</LINE></INCREMENTAR_LM>
-  <INCREMENTAR_HM><FILE>D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm</FILE><LINE>196</LINE></INCREMENTAR_HM>
-  <INCREMENTAR_H><FILE>D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm</FILE><LINE>206</LINE></INCREMENTAR_H>
-  <FIN><FILE>D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm</FILE><LINE>216</LINE></FIN>
+  <CORREGIR_BCD><FILE>D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm</FILE><LINE>182</LINE></CORREGIR_BCD>
+  <START><FILE>D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm</FILE><LINE>132</LINE></START>
+  <SEND><FILE>D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm</FILE><LINE>146</LINE></SEND>
+  <STOP><FILE>D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm</FILE><LINE>139</LINE></STOP>
+  <CICLE><FILE>D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm</FILE><LINE>149</LINE></CICLE>
+  <WAIT_FOR_ACK><FILE>D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm</FILE><LINE>171</LINE></WAIT_FOR_ACK>
+  <ONE><FILE>D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm</FILE><LINE>160</LINE></ONE>
+  <CONTINUE><FILE>D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm</FILE><LINE>163</LINE></CONTINUE>
+  <INCREMENTAR_LM><FILE>D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm</FILE><LINE>187</LINE></INCREMENTAR_LM>
+  <INCREMENTAR_HM><FILE>D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm</FILE><LINE>197</LINE></INCREMENTAR_HM>
+  <INCREMENTAR_H><FILE>D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm</FILE><LINE>207</LINE></INCREMENTAR_H>
+  <FIN><FILE>D:\programacion\AVR\aprendiendoAVR\controlTM1637\controlTM1637\main.asm</FILE><LINE>217</LINE></FIN>
  </LABELS>
 </ASSEMBLER_INFO>
